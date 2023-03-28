@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Import</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <style type="text/css">
+      body {
+        background-color: #f7fcff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5 pt-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-9">
+          <div class="card">
+            <div class="card-header">
+              <h4>
+                BTP project 2023: Machine learning algorithm for borehole thermal interaction {{type}}
+                <span class="text-primary"></span>
+              </h4>
+            </div>
+            <div class="card-body">
+
+              <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="col-md-12">
+                  
+                
+                <div class="col-md-12 my-3 d-flex pl-0">
+                
+                    <input
+                      type="text"
+                      name="d1"
+                      class="custom-input"
+                      id="d1"
+                      placeholder="Enter time(seconds)"
+                    />
+                    
+                
+                </div>
+
+                <div class="col-md-12 my-3 d-flex pl-0">
+                
+                    <input
+                      type="text"
+                      name="d2"
+                      class="custom-input"
+                      id="d2"
+                      placeholder="Enter T_ambient(°C)"
+                    />
+                    
+                
+                </div>
+                <div class="col-md-12 my-3 d-flex pl-0">
+                
+                    <input
+                      type="text"
+                      name="d3"
+                      class="custom-input"
+                      id="d3"
+                      placeholder="Enter T_in(°C)"
+                    />
+                    
+                
+                </div>
+
+                <div class="col-md-12 my-3">
+                  
+                </div>
+                <div class="col-md-12">
+                  <button class="btn btn-primary" type="submit">Predict</button>
+                  
+                </div>
+              </form>
+            </div>
+            <div class="col-md-12">
+           T_out :- {{ output }}<br>
+           {{rec}} :- {{heat}}
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    // Add the following code if you want the name of the file appear on select
+    $(".custom-file-input").on("change", function () {
+      let fileName = $(this).val().split("\\").pop();
+      $(this)
+        .siblings(".custom-file-label")
+        .addClass("selected")
+        .html(fileName);
+    });
+  </script>
+</html>
+
+
+
